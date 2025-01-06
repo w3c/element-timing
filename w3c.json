@@ -1,5 +1,8 @@
- {
-    "group":      [80485]
-,   "contacts":   ["yoavweiss"]
-,   "repo-type":  "cg-report"
+{
+  "group": 45211,
+  "contacts": [
+    "caribouW3"
+  ],
+  "shortName": "element-timing",
+  "repo-type": "rec-track"
 }
