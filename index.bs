@@ -1,14 +1,14 @@
 <pre class=metadata>
 Title: Element Timing API
-Status: CG-DRAFT
+Status: ED
 Shortname: element-timing
-Group: WICG
+Group: webperf
 Level: 1
 Editor: Ian Clelland, Google https://google.com, iclelland@chromium.org, w3cid 76841
         Tim Dresser, Google https://google.com, tdresser@chromium.org
 Former Editor: Nicolás Peña Moreno, Google https://google.com, npm@chromium.org
 URL: https://wicg.github.io/element-timing
-Repository: https://github.com/WICG/element-timing
+Repository: https://github.com/w3c/element-timing
 Test Suite: https://github.com/web-platform-tests/wpt/tree/master/element-timing
 Abstract: This document defines an API that enables monitoring when large or developer-specified image elements and text nodes are displayed on screen.
 Default Highlight: js
