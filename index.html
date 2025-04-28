@@ -5,7 +5,7 @@
   <title>Element Timing API</title>
   <meta content="ED" name="w3c-status">
   <link href="https://www.w3.org/StyleSheets/TR/2021/W3C-ED" rel="stylesheet">
-  <meta content="Bikeshed version ac5ea272d, updated Fri Dec 6 15:45:15 2024 -0800" name="generator">
+  <meta content="Bikeshed version b25686b9f, updated Fri Mar 14 14:15:20 2025 -0700" name="generator">
   <link href="https://w3c.github.io/element-timing/" rel="canonical">
   <meta content="dark light" name="color-scheme">
   <link href="https://www.w3.org/StyleSheets/TR/2021/dark.css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css">
@@ -961,7 +961,7 @@ var[data-var-color="6"] { --var-vg: #FFBCF2; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.w3.org/"> <img alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72"> </a> </p>
    <h1 class="p-name no-ref" id="title">Element Timing API</h1>
-   <p id="w3c-state"><a href="https://www.w3.org/standards/types/#ED">Editor’s Draft</a>, <time class="dt-updated" datetime="2025-01-09">9 January 2025</time></p>
+   <p id="w3c-state"><a href="https://www.w3.org/standards/types/#ED">Editor’s Draft</a>, <time class="dt-updated" datetime="2025-04-28">28 April 2025</time></p>
    <details open>
     <summary>More details about this document</summary>
     <div data-fill-with="spec-metadata">
@@ -996,7 +996,6 @@ var[data-var-color="6"] { --var-vg: #FFBCF2; }
 	Don’t cite this document other than as work in progress. </p>
    <p><a href="https://github.com/w3c/element-timing/issues">GitHub Issues</a> are preferred for discussion of this specification. </p>
    <p>This document is governed by the <a href="https://www.w3.org/policies/process/20231103/" id="w3c_process_revision">03 November 2023 W3C Process Document</a>. </p>
-   <p></p>
   </div>
   <div data-fill-with="at-risk"></div>
   <nav data-fill-with="table-of-contents" id="toc">
@@ -1115,7 +1114,7 @@ For example, developers could monitor the time it takes for a widget to show up 
    <p>The <code class="idl"><a data-link-type="idl" href="https://w3c.github.io/performance-timeline/#dom-performanceentry-name" id="ref-for-dom-performanceentry-name">name</a></code> attribute’s getter must return the value it was initialized to.</p>
    <p>The <code class="idl"><a data-link-type="idl" href="https://w3c.github.io/performance-timeline/#dom-performanceentry-starttime" id="ref-for-dom-performanceentry-starttime">startTime</a></code> attribute’s getter must return the value of <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this">this</a>’s <code class="idl"><a data-link-type="idl" href="#dom-performanceelementtiming-rendertime" id="ref-for-dom-performanceelementtiming-rendertime">renderTime</a></code> if it is not 0, and the value of <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this①">this</a>’s <code class="idl"><a data-link-type="idl" href="#dom-performanceelementtiming-loadtime" id="ref-for-dom-performanceelementtiming-loadtime">loadTime</a></code> otherwise.</p>
    <p>The <code class="idl"><a data-link-type="idl" href="https://w3c.github.io/performance-timeline/#dom-performanceentry-duration" id="ref-for-dom-performanceentry-duration">duration</a></code> attribute’s getter must return 0.</p>
-   <p>The <code class="idl"><a data-link-type="idl" href="#dom-performanceelementtiming-rendertime" id="ref-for-dom-performanceelementtiming-rendertime①">renderTime</a></code> attribute getter step is to return the <a data-link-type="dfn" href="https://w3c.github.io/paint-timing/#default-paint-timestamp" id="ref-for-default-paint-timestamp">default paint timestamp</a> given <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this②">this</a>'s <a data-link-type="dfn" href="https://w3c.github.io/paint-timing/#painttimingmixin-paint-timing-info" id="ref-for-painttimingmixin-paint-timing-info">paint timing info</a>.</p>
+   <p>The <code class="idl"><a data-link-type="idl" href="#dom-performanceelementtiming-rendertime" id="ref-for-dom-performanceelementtiming-rendertime①">renderTime</a></code> attribute getter step is to return the <a data-link-type="dfn" href="https://w3c.github.io/paint-timing/#default-paint-timestamp" id="ref-for-default-paint-timestamp">default paint timestamp</a> given <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this②">this</a>’s <a data-link-type="dfn" href="https://w3c.github.io/paint-timing/#painttimingmixin-paint-timing-info" id="ref-for-painttimingmixin-paint-timing-info">paint timing info</a>.</p>
    <p>The <code class="idl"><a data-link-type="idl" href="#dom-performanceelementtiming-loadtime" id="ref-for-dom-performanceelementtiming-loadtime①">loadTime</a></code> attribute’s getter must return the the value it was initialized to.</p>
    <p>The <code class="idl"><a data-link-type="idl" href="#dom-performanceelementtiming-intersectionrect" id="ref-for-dom-performanceelementtiming-intersectionrect">intersectionRect</a></code> attribute must return the value it was initialized to.</p>
    <p>The <code class="idl"><a data-link-type="idl" href="#dom-performanceelementtiming-identifier" id="ref-for-dom-performanceelementtiming-identifier">identifier</a></code> attribute’s getter must return the value it was initialized to.</p>
@@ -1131,7 +1130,7 @@ For example, developers could monitor the time it takes for a widget to show up 
       <p>Return <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this④">this</a>’s <a data-link-type="dfn" href="#element" id="ref-for-element③">element</a>.</p>
     </ol>
    </div>
-   <p class="note" role="note"><span class="marker">Note:</span> This means that an element that is no longer <a data-link-type="dfn" href="https://dom.spec.whatwg.org/#concept-tree-descendant" id="ref-for-concept-tree-descendant">descendant</a> of the <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#document" id="ref-for-document">Document</a></code> will no longer be returned by <code class="idl"><a data-link-type="idl" href="#dom-performanceelementtiming-element" id="ref-for-dom-performanceelementtiming-element①">element</a></code>'s attribute getter.</p>
+   <p class="note" role="note"><span class="marker">Note:</span> This means that an element that is no longer <a data-link-type="dfn" href="https://dom.spec.whatwg.org/#concept-tree-descendant" id="ref-for-concept-tree-descendant">descendant</a> of the <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#document" id="ref-for-document">Document</a></code> will no longer be returned by <code class="idl"><a data-link-type="idl" href="#dom-performanceelementtiming-element" id="ref-for-dom-performanceelementtiming-element①">element</a></code>’s attribute getter.</p>
    <p>The <code class="idl"><a data-link-type="idl" href="#dom-performanceelementtiming-url" id="ref-for-dom-performanceelementtiming-url">url</a></code> attribute’s getter must perform the following steps:</p>
    <div class="algorithm" data-algorithm="PerformanceElementTiming url">
     <ol>
@@ -1182,7 +1181,7 @@ This allows developers to detect support for element timing.</p>
      When asked to <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="report-image-element-timing">report image element timing</dfn> given a <a data-link-type="dfn" href="https://w3c.github.io/paint-timing/#pending-image-record" id="ref-for-pending-image-record①">pending image record</a> <var>record</var>, a <a data-link-type="dfn" href="https://w3c.github.io/paint-timing/#paint-timing-info" id="ref-for-paint-timing-info">paint timing info</a> <var>paintTimingInfo</var> and a <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#document" id="ref-for-document②">Document</a></code> <var>document</var>, perform the following steps: 
     <ol>
      <li data-md>
-      <p>If <var>record</var>’s <a data-link-type="dfn" href="https://w3c.github.io/paint-timing/#pending-image-record-element" id="ref-for-pending-image-record-element">element</a>'s "<code class="highlight">elementtiming</code>" content attribute is absent, then abort these steps.</p>
+      <p>If <var>record</var>’s <a data-link-type="dfn" href="https://w3c.github.io/paint-timing/#pending-image-record-element" id="ref-for-pending-image-record-element">element</a>’s "<code class="highlight">elementtiming</code>" content attribute is absent, then abort these steps.</p>
      <li data-md>
       <p>Let <var>intersectionRect</var> be the value returned by the <a data-link-type="dfn" href="https://w3c.github.io/IntersectionObserver#calculate-intersection-rect-algo" id="ref-for-calculate-intersection-rect-algo">intersection rect algorithm</a> using <var>record</var>’s <a data-link-type="dfn" href="https://w3c.github.io/paint-timing/#pending-image-record-element" id="ref-for-pending-image-record-element①">element</a> as the target and viewport as the root.</p>
      <li data-md>
@@ -1199,11 +1198,11 @@ This allows developers to detect support for element timing.</p>
        <li data-md>
         <p>Initialize <var>entry</var>’s <code class="idl"><a data-link-type="idl" href="#dom-performanceelementtiming-intersectionrect" id="ref-for-dom-performanceelementtiming-intersectionrect①">intersectionRect</a></code> to <var>intersectionRect</var>.</p>
        <li data-md>
-        <p>Initialize <var>entry</var>’s <code class="idl"><a data-link-type="idl" href="#dom-performanceelementtiming-identifier" id="ref-for-dom-performanceelementtiming-identifier①">identifier</a></code> to <var>record</var>’s <a data-link-type="dfn" href="https://w3c.github.io/paint-timing/#pending-image-record-element" id="ref-for-pending-image-record-element③">element</a>'s "<code class="highlight">elementtiming</code>" content attribute.</p>
+        <p>Initialize <var>entry</var>’s <code class="idl"><a data-link-type="idl" href="#dom-performanceelementtiming-identifier" id="ref-for-dom-performanceelementtiming-identifier①">identifier</a></code> to <var>record</var>’s <a data-link-type="dfn" href="https://w3c.github.io/paint-timing/#pending-image-record-element" id="ref-for-pending-image-record-element③">element</a>’s "<code class="highlight">elementtiming</code>" content attribute.</p>
        <li data-md>
-        <p>Initialize <var>entry</var>’s <code class="idl"><a data-link-type="idl" href="#dom-performanceelementtiming-naturalwidth" id="ref-for-dom-performanceelementtiming-naturalwidth①">naturalWidth</a></code> and <code class="idl"><a data-link-type="idl" href="#dom-performanceelementtiming-naturalheight" id="ref-for-dom-performanceelementtiming-naturalheight①">naturalHeight</a></code> by running the same steps for an <code class="highlight"><a data-link-type="element" href="https://html.spec.whatwg.org/multipage/embedded-content.html#the-img-element" id="ref-for-the-img-element">img</a></code>'s <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/embedded-content.html#dom-img-naturalwidth" id="ref-for-dom-img-naturalwidth">naturalWidth</a></code> and <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/embedded-content.html#dom-img-naturalheight" id="ref-for-dom-img-naturalheight">naturalHeight</a></code> attribute getters, but using <var>record</var>’s <a data-link-type="dfn" href="https://w3c.github.io/paint-timing/#pending-image-record-request" id="ref-for-pending-image-record-request①">request</a> as the image.</p>
+        <p>Initialize <var>entry</var>’s <code class="idl"><a data-link-type="idl" href="#dom-performanceelementtiming-naturalwidth" id="ref-for-dom-performanceelementtiming-naturalwidth①">naturalWidth</a></code> and <code class="idl"><a data-link-type="idl" href="#dom-performanceelementtiming-naturalheight" id="ref-for-dom-performanceelementtiming-naturalheight①">naturalHeight</a></code> by running the same steps for an <code><a data-link-type="element" href="https://html.spec.whatwg.org/multipage/embedded-content.html#the-img-element" id="ref-for-the-img-element">img</a></code>’s <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/embedded-content.html#dom-img-naturalwidth" id="ref-for-dom-img-naturalwidth">naturalWidth</a></code> and <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/embedded-content.html#dom-img-naturalheight" id="ref-for-dom-img-naturalheight">naturalHeight</a></code> attribute getters, but using <var>record</var>’s <a data-link-type="dfn" href="https://w3c.github.io/paint-timing/#pending-image-record-request" id="ref-for-pending-image-record-request①">request</a> as the image.</p>
        <li data-md>
-        <p>Initialize <var>entry</var>’s <code class="idl"><a data-link-type="idl" href="#dom-performanceelementtiming-id" id="ref-for-dom-performanceelementtiming-id①">id</a></code> to <var>record</var>’s <a data-link-type="dfn" href="https://w3c.github.io/paint-timing/#pending-image-record-element" id="ref-for-pending-image-record-element④">element</a>'s "<code class="highlight">id</code>" content attribute.</p>
+        <p>Initialize <var>entry</var>’s <code class="idl"><a data-link-type="idl" href="#dom-performanceelementtiming-id" id="ref-for-dom-performanceelementtiming-id①">id</a></code> to <var>record</var>’s <a data-link-type="dfn" href="https://w3c.github.io/paint-timing/#pending-image-record-element" id="ref-for-pending-image-record-element④">element</a>’s "<code class="highlight">id</code>" content attribute.</p>
       </ol>
      <li data-md>
       <p><a data-link-type="dfn" href="https://w3c.github.io/performance-timeline/#dfn-queue-a-performanceentry" id="ref-for-dfn-queue-a-performanceentry">Queue the PerformanceEntry</a> <var>entry</var>.</p>
@@ -1256,7 +1255,7 @@ The <a data-link-type="dfn" href="https://w3c.github.io/hr-time/#dfn-current-hig
 We choose to expose the <code class="idl"><a data-link-type="idl" href="#dom-performanceelementtiming-loadtime" id="ref-for-dom-performanceelementtiming-loadtime④">loadTime</a></code> because it is very easy to obtain even without an onload handler.
 In addition, we believe any fix to remove the leak provided by image onload handlers or ResourceTiming could also fix the leak provided by this API.</p>
    <p>The <code class="idl"><a data-link-type="idl" href="#dom-performanceelementtiming-rendertime" id="ref-for-dom-performanceelementtiming-rendertime②">renderTime</a></code> (display timestamp) is indeed newly exposed information. Implementations are advised to coarsen that timestamp further,
-o a 4 milliseconds resolution at least, to avoid exposing differences in decoding time between cross-origin images. Note that other checks,
+to a 4 milliseconds resolution at least, to avoid exposing differences in decoding time between cross-origin images. Note that other checks,
 such as `Timing-Allow-Origin`, does not work here due to same-origin and cross-origin images being rendered at the same time.
 Exposing a coarse <code class="idl"><a data-link-type="idl" href="#dom-performanceelementtiming-rendertime" id="ref-for-dom-performanceelementtiming-rendertime③">renderTime</a></code> is anyway not a substantial attack vector, given that image <a data-link-type="dfn" href="https://drafts.csswg.org/css-images-3/#natural-size" id="ref-for-natural-size">natural size</a> and loading time are exposed in other ways.</p>
 <pre class="example highlight" id="example-5e4b94b5"><a class="self-link" href="#example-5e4b94b5"></a>// In the attacker frame.
@@ -2555,7 +2554,12 @@ function hideRefHint(refHint) {
 function showRefHint(link) {
     if(link.classList.contains("dfn-link")) return;
     const url = link.getAttribute("href");
-    const ref = refsData[url];
+    const refHintKey = link.getAttribute("data-refhint-key");
+    let key = url;
+    if(refHintKey) {
+        key = refHintKey + "_" + url;
+    }
+    const ref = refsData[key];
     if(!ref) return;
 
     hideAllRefHints(); // Only display one at this time.
