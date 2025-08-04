@@ -196,11 +196,9 @@ We extend the {{Element}} interface as follows:
 
 <pre class="idl">
 partial interface Element {
-    [CEReactions] attribute DOMString elementTiming;
+    [CEReactions, Reflect] attribute DOMString elementTiming;
 };
 </pre>
-
-The {{Element/elementTiming}} attribute must <a>reflect</a> the element's "<code>elementtiming</code>" content attribute.
 
 Report Element Timing {#sec-report-element-timing}
 --------------------------------------------------
