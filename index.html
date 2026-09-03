@@ -5,9 +5,9 @@
   <title>Element Timing API</title>
   <meta content="ED" name="w3c-status">
   <link href="https://www.w3.org/StyleSheets/TR/2021/W3C-ED" rel="stylesheet">
-  <meta content="Bikeshed version 9e651ddb3, updated Fri Dec 12 15:40:37 2025 -0800" name="generator">
+  <meta content="Bikeshed version ac92c2f0d, updated Fri Aug 21 16:01:29 2026 -0700" name="generator">
   <link href="https://w3c.github.io/element-timing/" rel="canonical">
-  <meta content="e0215aa507b22d4e3f4069efefc443c019078628" name="revision">
+  <meta content="45e9c0ac7c8d85efa48ef6f9bcf3cfa46b80511d" name="revision">
   <meta content="dark light" name="color-scheme">
   <link href="https://www.w3.org/StyleSheets/TR/2021/dark.css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css">
 <style>/* Boilerplate: style-autolinks */
@@ -303,7 +303,7 @@ pre .property::before, pre .property::after {
 </style>
 <style>/* Boilerplate: style-counters */
 body {
-    counter-reset: example figure issue;
+    counter-reset: example figure issue table;
 }
 .issue {
     counter-increment: issue;
@@ -328,6 +328,13 @@ figcaption {
 }
 figcaption:not(.no-marker)::before {
     content: "Figure " counter(figure) " ";
+}
+
+figure.table figcaption {
+    counter-increment: table;
+}
+figure.table figcaption:not(.no-marker)::before {
+    content: "Table " counter(table) " ";
 }
 </style>
 <style>/* Boilerplate: style-dfn-panel */
@@ -914,6 +921,30 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
     c-[vm] { color: #cb4b16 } /* Name.Variable.Magic */
     c-[il] { color: #657b83 } /* Literal.Number.Integer.Long */
 }
+
+@media print {
+    /* Darken colors for print that would otherwise print too faintly */
+    c-[c]  { color: #555555 } /* Comment */
+    c-[d]  { color: #555555 } /* Comment.Multiline */
+    c-[cp] { color: #555555 } /* Comment.Preproc */
+    c-[c1] { color: #555555 } /* Comment.Single */
+    c-[cs] { color: #555555 } /* Comment.Special */
+    c-[o]  { color: #222222 } /* Operator */
+    c-[p]  { color: #222222 } /* Punctuation */
+    c-[ow] { color: #222222 } /* Operator.Word */
+    c-[s]  { color: #664400 } /* Literal.String */
+    c-[t]  { color: #664400 } /* Literal.String.Single */
+    c-[u]  { color: #664400 } /* Literal.String.Double */
+    c-[sb] { color: #664400 } /* Literal.String.Backtick */
+    c-[sc] { color: #664400 } /* Literal.String.Char */
+    c-[sd] { color: #664400 } /* Literal.String.Doc */
+    c-[se] { color: #664400 } /* Literal.String.Escape */
+    c-[sh] { color: #664400 } /* Literal.String.Heredoc */
+    c-[si] { color: #664400 } /* Literal.String.Interpol */
+    c-[sx] { color: #664400 } /* Literal.String.Other */
+    c-[sr] { color: #664400 } /* Literal.String.Regex */
+    c-[ss] { color: #664400 } /* Literal.String.Symbol */
+}
 </style>
 <style>/* Boilerplate: style-var-click-highlighting */
 /*
@@ -966,7 +997,7 @@ var[data-var-color="6"] { --var-vg: #FFBCF2; }
 </p>
    <h1 class="no-ref p-name" id="title">Element Timing API</h1>
    <p id="w3c-state"><a href="https://www.w3.org/standards/types/#ED">Editor’s Draft</a>,
-    <time class="dt-updated" datetime="2026-03-19">19 March 2026</time></p>
+    <time class="dt-updated" datetime="2026-09-03">3 September 2026</time></p>
    <details open>
     <summary>More details about this document</summary>
     <div data-fill-with="spec-metadata">
@@ -1175,7 +1206,7 @@ This allows developers to detect support for element timing.</p>
    <h3 class="heading settled" data-level="3.2" id="sec-report-element-timing"><span class="secno">3.2. </span><span class="content">Report Element Timing</span><a class="self-link" href="#sec-report-element-timing"></a></h3>
    <div class="algorithm" data-algorithm="report element timing">
     
-    When asked to <dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="report-element-timing">report element timing</dfn> given a <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#document" id="ref-for-document①">Document</a></code> <var>doc</var>, a [/=paint timing info=] <var>paintTimingInfo</var>, an <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#ordered-set" id="ref-for-ordered-set">ordered set</a> of <a data-link-type="dfn" href="https://w3c.github.io/paint-timing/#pending-image-record" id="ref-for-pending-image-record">pending image records</a> <var>paintedImages</var>, and an <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#ordered-set" id="ref-for-ordered-set①">ordered set</a> of <a data-link-type="dfn" href="#element" id="ref-for-element⑥">elements</a> <var>paintedTextNodes</var>, perform the following steps:
+    When asked to <dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="report-element-timing">report element timing</dfn> given a <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#document" id="ref-for-document①">Document</a></code> <var>doc</var>, a <a data-link-type="dfn" href="https://w3c.github.io/paint-timing/#paint-timing-info" id="ref-for-paint-timing-info">paint timing info</a> <var>paintTimingInfo</var>, an <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#ordered-set" id="ref-for-ordered-set">ordered set</a> of <a data-link-type="dfn" href="https://w3c.github.io/paint-timing/#pending-image-record" id="ref-for-pending-image-record">pending image records</a> <var>paintedImages</var>, and an <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#ordered-set" id="ref-for-ordered-set①">ordered set</a> of <a data-link-type="dfn" href="#element" id="ref-for-element⑥">elements</a> <var>paintedTextNodes</var>, perform the following steps:
 
 
     <ol>
@@ -1196,7 +1227,7 @@ This allows developers to detect support for element timing.</p>
    <h3 class="heading settled" data-level="3.3" id="sec-report-image-element"><span class="secno">3.3. </span><span class="content">Report Image Element Timing</span><a class="self-link" href="#sec-report-image-element"></a></h3>
    <div class="algorithm" data-algorithm="report image element timing">
     
-    When asked to <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="report-image-element-timing">report image element timing</dfn> given a <a data-link-type="dfn" href="https://w3c.github.io/paint-timing/#pending-image-record" id="ref-for-pending-image-record①">pending image record</a> <var>record</var>, a <a data-link-type="dfn" href="https://w3c.github.io/paint-timing/#paint-timing-info" id="ref-for-paint-timing-info">paint timing info</a> <var>paintTimingInfo</var> and a <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#document" id="ref-for-document②">Document</a></code> <var>document</var>, perform the following steps:
+    When asked to <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="report-image-element-timing">report image element timing</dfn> given a <a data-link-type="dfn" href="https://w3c.github.io/paint-timing/#pending-image-record" id="ref-for-pending-image-record①">pending image record</a> <var>record</var>, a <a data-link-type="dfn" href="https://w3c.github.io/paint-timing/#paint-timing-info" id="ref-for-paint-timing-info①">paint timing info</a> <var>paintTimingInfo</var> and a <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#document" id="ref-for-document②">Document</a></code> <var>document</var>, perform the following steps:
 
 
     <ol>
@@ -1231,7 +1262,7 @@ This allows developers to detect support for element timing.</p>
    <h3 class="heading settled" data-level="3.4" id="sec-report-text"><span class="secno">3.4. </span><span class="content">Report Text Element Timing</span><a class="self-link" href="#sec-report-text"></a></h3>
    <div class="algorithm" data-algorithm="report text element timing">
     
-    When asked to <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="report-text-element-timing">report text element timing</dfn> given an <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#element" id="ref-for-element⑨">Element</a></code> <var>element</var>, a <a data-link-type="dfn" href="https://w3c.github.io/paint-timing/#paint-timing-info" id="ref-for-paint-timing-info①">paint timing info</a> <var>paintTimingInfo</var> and a <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#document" id="ref-for-document③">Document</a></code> <var>document</var>, perform the following steps:
+    When asked to <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="report-text-element-timing">report text element timing</dfn> given an <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#element" id="ref-for-element⑨">Element</a></code> <var>element</var>, a <a data-link-type="dfn" href="https://w3c.github.io/paint-timing/#paint-timing-info" id="ref-for-paint-timing-info②">paint timing info</a> <var>paintTimingInfo</var> and a <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#document" id="ref-for-document③">Document</a></code> <var>document</var>, perform the following steps:
 
 
     <ol>
@@ -1938,7 +1969,7 @@ let dfnPanelData = {
 "03f41c8b": {"dfnID":"03f41c8b","dfnText":"timing-eligible","external":true,"refSections":[{"refs":[{"id":"ref-for-timing-eligible"}],"title":"1.1. Elements exposed"}],"url":"https://w3c.github.io/paint-timing/#timing-eligible"},
 "08a90f22": {"dfnID":"08a90f22","dfnText":"entryType","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-performanceentry-entrytype"}],"title":"2.1. PerformanceElementTiming interface"}],"url":"https://w3c.github.io/performance-timeline/#dom-performanceentry-entrytype"},
 "09c54b53": {"dfnID":"09c54b53","dfnText":"name","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-performanceentry-name"}],"title":"2.1. PerformanceElementTiming interface"},{"refs":[{"id":"ref-for-dom-performanceentry-name\u2460"}],"title":"3.3. Report Image Element Timing"},{"refs":[{"id":"ref-for-dom-performanceentry-name\u2461"}],"title":"3.4. Report Text Element Timing"}],"url":"https://w3c.github.io/performance-timeline/#dom-performanceentry-name"},
-"0d1464b6": {"dfnID":"0d1464b6","dfnText":"paint timing info","external":true,"refSections":[{"refs":[{"id":"ref-for-paint-timing-info"}],"title":"3.3. Report Image Element Timing"},{"refs":[{"id":"ref-for-paint-timing-info\u2460"}],"title":"3.4. Report Text Element Timing"}],"url":"https://w3c.github.io/paint-timing/#paint-timing-info"},
+"0d1464b6": {"dfnID":"0d1464b6","dfnText":"paint timing info","external":true,"refSections":[{"refs":[{"id":"ref-for-paint-timing-info"}],"title":"3.2. Report Element Timing"},{"refs":[{"id":"ref-for-paint-timing-info\u2460"}],"title":"3.3. Report Image Element Timing"},{"refs":[{"id":"ref-for-paint-timing-info\u2461"}],"title":"3.4. Report Text Element Timing"}],"url":"https://w3c.github.io/paint-timing/#paint-timing-info"},
 "0f3bdec9": {"dfnID":"0f3bdec9","dfnText":"PaintTimingMixin","external":true,"refSections":[{"refs":[{"id":"ref-for-painttimingmixin"}],"title":"2.1. PerformanceElementTiming interface"}],"url":"https://w3c.github.io/paint-timing/#painttimingmixin"},
 "12b24892": {"dfnID":"12b24892","dfnText":"intersection rect algorithm","external":true,"refSections":[{"refs":[{"id":"ref-for-calculate-intersection-rect-algo"}],"title":"3.3. Report Image Element Timing"}],"url":"https://w3c.github.io/IntersectionObserver#calculate-intersection-rect-algo"},
 "15793b4c": {"dfnID":"15793b4c","dfnText":"naturalHeight","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-img-naturalheight"}],"title":"3.3. Report Image Element Timing"}],"url":"https://html.spec.whatwg.org/multipage/embedded-content.html#dom-img-naturalheight"},
