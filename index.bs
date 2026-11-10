@@ -285,7 +285,7 @@ Exposing a coarse {{renderTime}} is anyway not a substantial attack vector, give
     <img src='victim.jpg'/>
     <script>
         // Wait until onload or some time when the PaintTiming entries will be visible.
-        onload() => {
+        window.onload = () => {
             let entry = performance.getEntriesByType('paint')[0];
             top.postMessage(entry.startTime, '*');
         }
